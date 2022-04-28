@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            line-height: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>GET 방식으로 요청 후 응답페이지 받아보기 테스트</h1>
+    <p>
+        특징1. GET방식으로 요청하는건 URL의 Header 영역에 데이터들을 포함시켜서 요청함<br>
+        =>사용자가 입력한 값(데이터)들이 URL에 노출됨<br>
+        =>보안유지가 불가능함<br>
+        =>즉, 로그인이나 회원가입 등과 같은 경우 GET 방식이 부적합함 <br><br>
+
+        특징2. Header 영역은 전송하는 길이에 제한이 있음<br>
+        =>방대한 데이터를 담았을 경우 초과된 데이터는 그대로 절단되서 넘어감<br>
+        =>즉, 게시판 작성 같은 경우도 GET 방식이 부적합함<br><br>
+
+        특징3. 장점이라고 한다면 URL에 데이터가 노출되기 때문에 
+        즐겨찾기 기능이 가능하다는 점이 있음 (북마크==즐겨찾기) <br>
+        =>즉, 검색 기능 같은 경우 GET 방식이 더 적합함<br>
+    </p>
+    <h2>개인정보 입력 - GET</h2>
+
+    <!--
+        form 태그 내의 제출버튼(submit) 클릭 시 form 태그 속성 중 
+        action에 작성된 url 주소로 요청이 들어감(제출)
+        즉, Controller (Servlet) 내의 어떤 메소드를 호출이 됨
+
+        Servlet 요청 같은 경우 반드시 그 요청값이 현재 웹 애플리케이션의 
+        context root ==처음에 내가 지정했던 경로 뒤에 작성되어야만 함
+
+        http://localhost:8888/1_Servlet/test1.do
+
+        절대경로방식( /로 시작함): localhost:8888 뒤에 action에 작성한 값이 붙여지면서 요청됨
+        상대경로방식(문구로 시작되는 경우): 현재 이 페이지가 보여질 때의 url 경로중 마지막 /로 부터 
+                                            그 뒤에 action에 작성한 값이 붙여지면서 요청됨
+    -->
+    <form action="../test1.do" method="get">
+        <ul>
+            <li>이름: <input type="text" name="name"></li>
+            <li>성별: 
+                남자 <input type="radio" name="gender" value="M"> 
+                여자 <input type="radio" name="gender" value="F">
+            </li>
+            <li>나이: <input type="number" name="age"></li>
+            <li>사는 도시: 
+                <select name="city">
+                    <option>서울시</option>
+                    <option>경기도</option>
+                    <option>강원도</option>
+                    <option>충청도</option>
+                    <option>경상도</option>
+                    <option>전라도</option>
+                </select>
+            </li>
+            <li>키: <input type="range" name="height" min="140" max="200"></li>
+            <li>좋아하는 음식(모두 고르시오): 
+                한식 <input type="checkbox" name="food" value="한식">
+                중식 <input type="checkbox" name="food" value="중식">
+                일식 <input type="checkbox" name="food" value="일식">
+                양식 <input type="checkbox" name="food" value="양식">
+                분식 <input type="checkbox" name="food" value="분식">
+            </li>
+            <li><input type="submit"> <input type="reset"></li>
+        </ul>
+    </form>
+</body>
+</html>
