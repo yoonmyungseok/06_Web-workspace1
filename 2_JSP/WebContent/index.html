@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <h1>* JSP(Java Server Page)</h1>
+    <p>
+        JSP란, HTML 형식 내에서 자바코드를 쓸 수 있는 "자바 언어"로<br>
+        서블릿(자바코드)에서 응답화면을 구현했던 복잡함을 보다 간단하게 해결 가능하다<br>
+        =>즉, JSP의 가장 큰 장점은 Servlet에서는 "비즈니스 로직 처리"(=컨트롤러 역할)만 집중하고 <br>
+        JSP에서는 프레젠테이션 로직 처리(뷰 역할)만 집중하게끔 코드를 분리할 수 있는 것
+    </p>
+    <hr>
+    <h2>JSP Element 표현법</h2>
+    <h3>1. JSP 스크립팅 원소(Scripting Element)</h3>
+    <p>
+        JSP 페이지 내에서 자바 코드를 기술할 수 있게 해주는 기능
+    </p>
+    <ol>
+        <li>
+            선언문 &lt;%! %&gt;<br>
+            멤버변수와 메소드를 선언하기 위해 사용<br>
+        </li>
+        <li>
+            스크립틀릿: <% %> <br>
+            JSP에서 자바 코드를 기술하기 위한 제일 기본적인 표현법<br>
+        </li>
+        <li>
+            표현식(출력식): <%= %> <br>
+            자바에서 작성한 값(변수명 또는 메소드 호출)을 출력하기 위해 사용되는 표현법 <br>
+        </li>
+    </ol>
+    <a href="views/01_ScriptingElement.jsp">View detail &raquo;</a> <!-- >> : &raquo;-->
+
+    <hr>
+    <h3>2. 지시어(Directive) &lt;%@ page/include/taglib 속성="속성값" %&gt;</h3>
+    <p>
+        JSP page 전체에 영향을 미치는 정보를 기술할 때 쓰임
+    </p>
+
+    <ol>
+        <li>
+            page 지시어: 현재의 JSP 페이지를 처리하는 데 필요한 각종 속성들을 기술하는 부분 <br>
+        </li>
+        <li>
+            include 지시어: JSP 파일에 또 다른 JSP 파일을 포함시키고자 할 때 사용하는 지시어 <br>
+        </li>
+        <li>
+            taglib 지시어: JSP 기능을 좀 더 확장시킬 수 있는 인자로
+                            추가적인 라이브러리를 등록할 수 있는 구문 <br>
+        </li>
+    </ol>
+</body>
+</html>
