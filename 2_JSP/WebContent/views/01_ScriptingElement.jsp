@@ -17,13 +17,14 @@
     %>
     
     <% 
-        //스크립틀릿: 이 안에 일반적인 자바 코드를 작성 (변수 선언 및 초기화, 제어문 등)
+        //스크립틀릿: 이 안에 일반적인 자바 코드를 작성 (변 선언 및 초기화, 제어문 등)
         int sum=0;
         for(int i=1; i<=100; i++){
             sum+=i;
         }
         System.out.println("덧셈 끝! 결과는"+sum);
         System.out.println(test());
+
     %>
 	<p>
         화면으로 출력하고자 한다면 <br>
@@ -45,6 +46,7 @@
         <%for(int i=0; i<name.length; i++){ %>
         <li><%=name[i] %></li>
         <%} %>
+
     --%>
     <% for(String n:name){%>
         <li><%=n%></li>

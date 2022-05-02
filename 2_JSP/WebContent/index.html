@@ -20,15 +20,15 @@
     </p>
     <ol>
         <li>
-            선언문 &lt;%! %&gt;<br>
+            선언문 &lt;%! %&lt;<br>
             멤버변수와 메소드를 선언하기 위해 사용<br>
         </li>
         <li>
-            스크립틀릿: <% %> <br>
+            스크립틀릿: &lt;% %&lt; <br>
             JSP에서 자바 코드를 기술하기 위한 제일 기본적인 표현법<br>
         </li>
         <li>
-            표현식(출력식): <%= %> <br>
+            표현식(출력식): &lt;%= %&lt; <br>
             자바에서 작성한 값(변수명 또는 메소드 호출)을 출력하기 위해 사용되는 표현법 <br>
         </li>
     </ol>
@@ -43,14 +43,27 @@
     <ol>
         <li>
             page 지시어: 현재의 JSP 페이지를 처리하는 데 필요한 각종 속성들을 기술하는 부분 <br>
+            <ul>
+                <li>language: 사용할 스크립트 언어 유형을 지정</li>
+                <li>contentType:웹 브라우저가 받아 볼 해당 페이지의 형식, 인코딩 방식 지정</li>
+                <li>pageEncoding: jsp 파일에 기록된 자바 코드의 인코딩 방식을 지정</li>
+                <li>import: 자바에서의 import와 같은 의미</li>
+                <li>errorPage: 해당 jsp 상에서 오류가 발생했을 때 보여줄 에러페이지의 경로 지정</li>
+            </ul>
+            <a href="views/02_DirectivePage.jsp">View detail &raquo;</a>
         </li>
         <li>
             include 지시어: JSP 파일에 또 다른 JSP 파일을 포함시키고자 할 때 사용하는 지시어 <br>
+            <a href="views/03_DirectiveInclude.jsp">View detail &raquo;</a>
         </li>
         <li>
             taglib 지시어: JSP 기능을 좀 더 확장시킬 수 있는 인자로
                             추가적인 라이브러리를 등록할 수 있는 구문 <br>
         </li>
     </ol>
+    <hr>
+    <h2>피자 주문 페이지(jsp): 주문요청-->주문 요청을 받아서 처리해주는 Servlet -->결제페이지(응답jsp)</h2>
+    
+    <a href="views/04_PizzaOrderForm.jsp">피자 주문하러 가기 &raquo;</a>
 </body>
 </html>
